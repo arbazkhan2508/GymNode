@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/checkout.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="main">
+        <div id="cnav">
+            <img src="https://cdn.shopify.com/s/files/1/0550/4663/5688/files/The_Tib_Bar_Guy_920336f1-2b5b-454f-8335-005f37dec9c5_x320.jpg?v=1674059696"
+                alt="">
+                <a id="mycart" href="#">
+                    <svg role="presentation" stroke-width="2" focusable="false" width="22" height="22"
+                        class="icon icon-cart" viewBox="0 0 22 22">
+                        <path
+                            d="M11 7H3.577A2 2 0 0 0 1.64 9.497l2.051 8A2 2 0 0 0 5.63 19H16.37a2 2 0 0 0 1.937-1.503l2.052-8A2 2 0 0 0 18.422 7H11Zm0 0V1"
+                            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
+                
+        </div>
+        <div class="cardd">
+            <div class="contain">
+                <div class="usr">
+                    <h4>Contact</h4>
+                    <div class="em">
+                          <h6>Email</h6>
+                          <h5><%= user.email %></h5>
+                    </div>
+                    <h4>Delivery</h4>
+                    <div class="em">
+                          <h6>Country/Region</h6>
+                          <h5>India</h5>
+                    </div>
+                    <div class="name">
+                        <div class="em">
+                            <h6>First name</h6>
+                            <h5><%= user.name %></h5>
+                      </div>
+                      <div class="em">
+                        <h6>Last name</h6>
+                        <h5><%= user.lastname %></h5>
+                      </div>
+                    </div>
+                    <div class="em">
+                        <h6>Address 1</h6>
+                        <h5><%= user.Address1 %></h5>
+                      </div>
+                      <div class="em">
+                        <h6>Address 2</h6>
+                        <h5><%= user.Address2 %></h5>
+                      </div>
+                      <div class="loc">
+                        <div class="em">
+                            <h6>City</h6>
+                            <h5><%= user.City %></h5>
+                          </div>
+                          <div class="em">
+                            <h6>State</h6>
+                            <h5><%= user.State %></h5>
+                          </div>
+                          <div class="em">
+                            <h6>Pin code</h6>
+                            <h5><%= user.Zipcode %></h5>
+                          </div>
+                      </div>
+                      <div class="em">
+                        <h6>Phone</h6>
+                        <h5><%= user.contactnumber %></h5>
+                      </div>
+                     
+                      <div id="rzp-button1" class="pay">
+                           Pay Now
+                      </div>
+                 </div>
+                
+                  <div class="check">
+                    <% var subtotal = 0 %>
+                    <% var shipping = 0 %>
+                    <% user.carts.forEach(function(cart){ %>
+                        <div class="cproduct">
+                            <div class="cl">
+                                 <div class="climg">
+                                       <img src="../images/uploads/productimages/<%= cart.productId.pic[1] %>" alt="">
+                                       <p><%= cart.quantity %></p>
+                                 </div>
+                                 <h6>The Tib Bar Pro</h6>
+                            </div>
+                            <div class="ri" style="display: flex;flex-direction: column;align-items: flex-end;gap: 1vmax;">
+                              <i onclick="window.location.href='/remove/cart/<%= cart.productId._id %>'" style="font-size: 1.4vmax;font-family: roobert;font-weight: 600;" class="ri-close-fill"></i>
+                            <h5>₹<%= cart.productId.Price %>.00</h5>
+                            </div>
+                            <% subtotal+= cart.productId.Price * cart.quantity %>
+                        </div>
+                    <% }) %>
+                    <div style="margin-top:5vh;" class="rr">
+                         <h6>Subtotal</h6>
+                         <h6>₹<%= subtotal %>.00</h6>
+                    </div>
+                    <% shipping = subtotal * 18 /100 %>
+                    <div class="rr">
+                        <h6>Shipping</h6>
+                        <h6>₹<%= shipping %>.00</h6>
+                   </div>
+                   <% var total = subtotal+ shipping %>
+
+                   <div class="rr">
+                       <h1>Total</h1>
+                       <h1 id="total">
+                        <span>
+                            INR
+                        </span>
+                        ₹<%= total %>.00</h1>
+                  </div>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+        <script>
+                 const variableData = document.getElementById('total').textContent;
+                // body: JSON.stringify({ data: variableData }),
+            var orderId;
+            $(document).ready(function () {
+              var settings = {
+                "url": "/create/orderId",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                  "Content-Type": "application/json"
+                }
+              };
+        
+              //creates new orderId everytime
+              $.ajax(settings).done(function (response) {
+        
+                orderId = response.id;
+                console.log(orderId);
+                $("button").show();
+                var options = {
+                  "key": "rzp_test_e0p4ROsVzyQ7xL", // Enter the Key ID generated from the Dashboard
+                  "amount": response.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                  "currency": "INR",
+                  "name": "The_Tib_Bar_Guy",
+                  "description": "Test Transaction",
+                  "image": "https://thetibbarguy.com/cdn/shop/files/BlackLogo.png?v=1680796818&width=120",
+                  "order_id": response.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                  "handler": function (response) {
+                  
+        
+                    var settings = {
+                      "url": "/api/payment/verify",
+                      "method": "POST",
+                      "timeout": 0,
+                      "headers": {
+                        "Content-Type": "application/json"
+                      },
+                      "data": JSON.stringify({ response }),
+                    }
+                    $.ajax(settings).done(function (response) {
+                      if (response.signatureIsValid === 'true') {
+                        alert("your booking is successfull please check your mail for more details")
+                        window.location.href = '/'
+                        done();
+                      }
+                      else {
+                        alert("failed")
+                      }
+                    })
+        
+                  },
+                  "prefill": {
+                    "name": "Nitish kumar",
+                    "email": "nitishjsr@gmail.com",
+                    "contact": "8709141863"
+                  },
+                  "notes": {
+                    "address": "Razorpay Corporate Office"
+                  },
+                  "theme": {
+                    "color": "#3399cc"
+                  }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.on('payment.failed', function (response) {
+                  alert(response.error.code);
+                  alert(response.error.description);
+                  alert(response.error.source);
+                  alert(response.error.step);
+                  alert(response.error.reason);
+                  alert(response.error.metadata.order_id);
+                  alert(response.error.metadata.payment_id);
+                });
+                document.getElementById('rzp-button1').onclick = function (e) {
+                  rzp1.open();
+                  e.preventDefault();
+                }
+              });
+            });
+            function done() {
+                            fetch('/confirm/booking', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ key: 'value' })
+                            })
+                                .then(response => response.text())
+                                .catch(error => console.log(error));
+            }
+        
+</script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Hospital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/addproduct.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+    <link rel="stylesheet" href="../stylesheets/loco.css">
+</head>
+<style>
+</style>
+<body>
+    <style>
+       
+        #add{
+            transform: translateY(0%) !important;
+        }
+       
+        #main_nav .left_nav h6{
+            margin-bottom: -1px; 
+        }
+    </style>
+    <% include ./partials/nav.ejs %>
+    <div class="form_container">
+         <div class="frm">             
+             <div class="btm">
+                <form action="/updateproduct/<%= product._id %>" method="post">
+                    <div class="top">
+                        <a href="/"><i class="ri-close-line"></i></a>
+                     </div>
+                    <h1>Edit Your Product Details</h1>
+                    <div class="information">
+                        <div class="info">
+                          
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Name</label>
+                                <input value="<%= product.productName %>" name="Pn" placeholder="Your Product Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Price</label>
+                                <input value="<%= product.Price %>" name="price" placeholder="Your Product Price" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Update Price</label>
+                                <input value="<%= product.updatedPrice %>" name="updatedPrice" placeholder="Your Product Update Price" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Weight</label>
+                                <input value="<%= product.weight %>" name="weight" placeholder="Your Product Weight" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Height</label>
+                                <input value="<%= product.height %>" name="height" placeholder="Your Product Height" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Length</label>
+                                <input value="<%= product.Length %>" name="length" placeholder="Your Product Length" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Width</label>
+                                <input  value="<%= product.width %>" name="width" placeholder="Your Product Width" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Bolt Des</label>
+                                <input value="<%= product.bolt %>"  name="bolt" placeholder="Your Product Bolt Des " type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Availability</label>
+                                <input value="<%= product.Availability %>"  name="Availability" placeholder="Your Product Availability" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                           
+              
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Add Des of your Product</label>
+                                <textarea value="<%= product.Des %>" style="color: #111 !important;" name="Des" placeholder="Description of the Product" input type="text" name="desc" class="form-control" id="exampleInputPassword1"> </textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Add Highlits of your Product</label>
+                                <textarea style="color: #111 !important;" name="Highlits" placeholder="Highlits of the Product" input type="text" name="desc" class="form-control" id="exampleInputPassword1"> </textarea>
+                            </div>
+                        </div>
+                        
+                      
+                        
+                        
+                    <button type="submit" class="btn btn-primary">Edit Your product</button>
+
+                    </div>
+                  </form>
+             </div>
+         </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="../javascripts/search.js"></script>
+</body>
+</html>

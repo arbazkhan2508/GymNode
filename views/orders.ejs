@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+</head>
+<body>
+    <% include ./partials/nav.ejs %>
+    <% include ./partials/search.ejs %>
+    <div id="main">
+        <div class="header">
+            <div id="hoverimg" class="user_img">
+                <img src="https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80" alt="">
+            </div>
+            <div class="opt">
+                
+                <div class="op">
+                     <h6 style="color: #111;">Orders</h6>
+                     <div class="ol"></div>
+                </div>
+                <div onclick="window.location.href='/profile'" class="op">
+                    <h6>Address</h6>
+                    <div style="opacity: 0;" class="ol"></div>
+               </div>
+            </div>
+            <h6>Logout</h6>
+        </div>
+        <% if(user.Orders.length>0){ %>
+            <div id="products_wrapper">
+                <div id="products">
+                    <% user.Orders.forEach(function(ord){ %>
+                            <div onclick="window.location.href='#'" id="product">
+                                <div class="img">
+                                    <img src="../images/uploads/productimages/<%= ord.productId.pic[4] %>"
+                                    alt="">
+                                    <div class="overlay">
+                                        <img src="../images/uploads/productimages/<%= ord.productId.pic[0] %>"
+                                            alt="">
+                                      
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h4><%= ord.productId.productName %></h4>
+                                    <h6 style="background-color:#000;color: #fff;padding: .7vmax 2vmax;border-radius: 2vmax;letter-spacing: 1px;margin-top: 1vmax;">Ordered</h6>
+                                </div>
+                            </div>
+                    <% }) %>
+                </div>
+              </div>
+        <% }else{ %>
+            <div class="noitm">
+                <div class="empty-state__icon-wrapper"><svg role="presentation" fill="none" focusable="false" stroke-width="1" width="32" height="32" class="icon icon-picto-box" viewBox="0 0 24 24">
+                    <path d="M2.22 5.472a.742.742 0 0 0-.33.194.773.773 0 0 0-.175.48c-.47 4.515-.48 7.225 0 11.707a.792.792 0 0 0 .505.737l9.494 3.696.285.079.286-.08 9.494-3.694a.806.806 0 0 0 .505-.737c.5-4.537.506-7.153 0-11.648a.765.765 0 0 0-.175-.542.739.739 0 0 0-.33-.257v.002" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M22.269 5.997a.771.771 0 0 0-.16-.335.744.744 0 0 0-.33-.257l-9.494-3.629a.706.706 0 0 0-.571 0L6.967 3.623 2.22 5.47a.742.742 0 0 0-.33.192.771.771 0 0 0-.16.336.806.806 0 0 0 .49.592l9.494 3.696h.57l5.216-2.03L21.78 6.59a.794.794 0 0 0 .492-.593h-.002Z" fill="currentColor" fill-opacity=".12"></path>
+                    <path d="m17.5 8.255-5.215 2.03h-.571L2.22 6.59a.806.806 0 0 1-.49-.592.771.771 0 0 1 .16-.336.742.742 0 0 1 .33-.192l4.747-1.847M17.5 8.255 21.78 6.59a.794.794 0 0 0 .492-.593h-.002a.771.771 0 0 0-.16-.335.744.744 0 0 0-.33-.257l-9.494-3.629a.706.706 0 0 0-.571 0L6.967 3.623M17.5 8.255 6.967 3.623M12 22.365v-12.08M15.5 17l4-1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <span class="count-bubble count-bubble--lg">0</span>
+                </div>
+                <h1>You haven't placed any orders yet.</h1>
+                <div onclick="window.location.href='/allproducts'" class="nbutton">Continue shopping</div>
+            </div>
+         <% } %>
+        
+    <% include ./partials/footer.ejs %>
+    <% include ./partials/loco.ejs %>
+    </div>
+    <script src="../javascripts/listner.js"></script>
+    <script src="../javascripts/nav.js"></script>
+    <script src="../javascripts/search.js"></script>
+</body>
+</html>

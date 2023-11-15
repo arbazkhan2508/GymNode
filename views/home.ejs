@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/home.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+    <link rel="stylesheet" href="../stylesheets/cartss.css">
+    <link rel="stylesheet" href="../stylesheets/page.css">
+</head>
+<body>
+    <% include ./partials/nav.ejs %>
+    <% include ./partials/search.ejs %>
+    <% if(user){ %>
+        <% include ./partials/cart.ejs %>
+    <% } %>
+
+    <div id="main">
+        <div id="main_page">
+            
+                <img id="mainimg1" src="https://thetibbarguy.com/cdn/shop/files/Horizontal_6.jpg?v=1690217958&width=2000" alt="">
+                <img id="mainimg2" src="https://thetibbarguy.com/cdn/shop/files/The_Tib_Bar_Guy_Banner_9739f5c9-262d-42c8-8b8c-16a8371f1874.jpg?v=1689260591&width=2000"
+                alt="">
+        </div>
+        <div class="Trusted-section">
+            <h1>EQUIPMENT USED BY</h1>
+            <div class="trusted_brand">
+                <div class="timgs">
+                    <img src="//thetibbarguy.com/cdn/shop/files/University_of_Arizona.jpg?v=1685650991&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/University_of_California_LA.jpg?v=1685651048&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Alvernia_University.png?v=1685651099&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Alvernia_University.png?v=1685651099&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Tampa_Bay_Rays_3f88c381-bddf-4ef4-99c1-bc8120de9e95.jpg?v=1685651375&amp;width=1500"
+                        alt="Tampa Bay Rays">
+                        <img src="//thetibbarguy.com/cdn/shop/files/University_of_Arizona.jpg?v=1685650991&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/University_of_California_LA.jpg?v=1685651048&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Alvernia_University.png?v=1685651099&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Alvernia_University.png?v=1685651099&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Tampa_Bay_Rays_3f88c381-bddf-4ef4-99c1-bc8120de9e95.jpg?v=1685651375&amp;width=1500"
+                        alt="Tampa Bay Rays">
+                        
+                </div>
+
+                <div class="timgs">
+                    <img src="//thetibbarguy.com/cdn/shop/files/University_of_Arizona.jpg?v=1685650991&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/University_of_California_LA.jpg?v=1685651048&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Alvernia_University.png?v=1685651099&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Alvernia_University.png?v=1685651099&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Tampa_Bay_Rays_3f88c381-bddf-4ef4-99c1-bc8120de9e95.jpg?v=1685651375&amp;width=1500"
+                        alt="Tampa Bay Rays">
+                        <img src="//thetibbarguy.com/cdn/shop/files/University_of_Arizona.jpg?v=1685650991&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/University_of_California_LA.jpg?v=1685651048&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Alvernia_University.png?v=1685651099&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Alvernia_University.png?v=1685651099&amp;width=1500"
+                        alt="">
+                    <img src="//thetibbarguy.com/cdn/shop/files/Tampa_Bay_Rays_3f88c381-bddf-4ef4-99c1-bc8120de9e95.jpg?v=1685651375&amp;width=1500"
+                        alt="Tampa Bay Rays">
+                </div>
+
+            </div>
+        </div>
+        <div id="swiper">
+            <div class="stop">
+                <div class="l">
+                    <h2>EVERYTHING YOU NEED</h2>
+                    <small>TO BULLETPROOF YOUR BODY</small>
+                </div>
+                <div class="r">
+                    <div class="sl">
+                        <div class="button">
+                            <div class="txt">
+                                <h6>SHOP ALL</h6>
+                                <div class="sline"></div>
+                            </div>
+                            <div class="icon">
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="slide">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <% randomproduct.forEach(function(product){ %>
+                            <div onclick="window.location.href='/single/<%= product._id %>'"  class="swiper-slide">
+                                <div class="img">
+                                    <img src="../images/uploads/productimages/<%= product.pic[1] %>"
+                                        alt="">
+                                    <div class="overlay">
+                                         <img src="../images/uploads/productimages/<%= product.pic[0] %>" alt="">
+                                        
+                                        <div class="add">
+                                            <i class="ri-add-fill"></i>
+                                            <small>Quick add</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h4><%= product.productName %></h4>
+                                    <div class="stars">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <h6>Rs. <%= product.Price %>.00</h6>
+                                </div>
+                            </div>
+                        <% }) %>
+                       
+                        
+
+
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="options">
+                <h1>SUPERCHARGE YOUR TRAINING</h1>
+                <div class="cards">
+                    <div class="card">
+                        <div class="cover">
+                            <h5>NEW GEAR</h5>
+                            <i class="ri-arrow-right-s-line"></i>
+                        </div>
+                        <img src="https://thetibbarguy.com/cdn/shop/files/The_Tib_Machine_New_Product.jpg?v=1687535618&width=800"
+                            alt="">
+                    </div>
+                    <div class="card">
+                        <div class="cover">
+                            <h5>BEST SELLERS</h5>
+                            <i class="ri-arrow-right-s-line"></i>
+                        </div>
+                        <img src="https://thetibbarguy.com/cdn/shop/files/tib_bar_22.jpg?v=1682565950&width=800" alt="">
+                    </div>
+                    <div onclick="window.location.href='/acc'" class="card">
+                        <div class="cover">
+                            <h5>ACCESORIES</h5>
+                            <i class="ri-arrow-right-s-line"></i>
+                        </div>
+                        <img src="https://thetibbarguy.com/cdn/shop/files/RSS_Main_Page.jpg?v=1682295862&width=800"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="divide">
+                <h1>INNOVATIVE HOME GYM EQUIPMENT</h1>
+                <div class="innov">
+                    <div id="left" class="lin">
+                        <h1>THE NORDIC BACK EXTENSION</h1>
+                        <img src="https://thetibbarguy.com/cdn/shop/files/NBEM_1x1_544d6e1b-33bb-4d19-b734-c99998b1c045.jpg?v=1682264790&width=1000"
+                            alt="">
+                    </div>
+                    <div class="lin">
+                        <div class="onel">
+                            <div class="l1">
+                                <h1>THE SOLO TIB BAR</h1>
+                                <img src="https://thetibbarguy.com/cdn/shop/files/Solo_Tib_Bar_1x1_3c6f94f9-1194-43dd-bb1a-5d86b7351a8b.jpg?v=1682265311&width=800"
+                                    alt="">
+                            </div>
+                            <div class="l1">
+                                <h1>THE SLANT STACK</h1>
+                                <img src="https://thetibbarguy.com/cdn/shop/files/The_Slant_Stack_1x1_584dd4eb-b7f1-4311-b79c-2365cc2fd639.jpg?v=1682266323&width=800"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div id="two" class="onel">
+                            <h1>THE REVERSE SQUAT STRAP</h1>
+                            <img src="https://thetibbarguy.com/cdn/shop/files/RSS.jpg?v=1682266635&width=1000" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <div class="text">
+                <div id="t1" class="t">
+                    <h1>THE EZ-NORD</h1>
+                    <p>The EZ-Nord is a Nordic Curl attachment that allows you to comfortably perform Nordic Curls on nearly any weight bench! The easy two-strap system allows for a quick & secure setup, so you can start mastering Nordic Curls!</p>
+                </div>
+                <div id="t2"class="t">
+                    <h1>THE SLANT RAMPS</h1>
+                    <p>The Slant Ramps are fully adjustable squat wedges and are excellent for many types of exercises and ability levels, perfect for ATG Split Squats, VMO Squats, ATG Squats, Jefferson Curls/Lengthening Deadlifts, Calf raises, and many more exercises!</p>
+                </div>
+                <div id="t3"class="t">
+                  <h1>THE TORQUE BAR</h1>
+                  <p>The Torque Bar is an all-in-one bundle that handles all of your hand, wrist, elbow & shoulder exercise needs & is the first and only wrist & elbow trainer that converts to an adjustable dumbbell in seconds!</p>
+                </div>
+                <div id="t4" class="t">
+                    <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, officiis!</h1>
+                  </div>
+                  <div id="t5"class="t">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, quidem.</h1>
+                  </div>
+                  <div id="t6"class="t">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, odit!</h1>
+                  </div>
+              </div>
+            <div id="image">
+                <div class="img" id="i1">
+                    <img src="https://thetibbarguy.com/cdn/shop/files/EZ_NORD_1x1_3192b1d0-fee0-47e3-8628-2ad970ed9cdc.jpg?v=1682293639&width=1000"
+                        alt="">
+                </div>
+                <div class="img" id="i2">
+                    <img src="https://thetibbarguy.com/cdn/shop/files/The_Slant_Ramps.jpg?v=1682273692&width=800"
+                        alt="">
+                </div>
+                <div class="img" id="i3">
+                    <img src="https://thetibbarguy.com/cdn/shop/files/The_Tib_Bar_Pro.jpg?v=1682271175&width=800"
+                        alt="">
+                </div>
+                <div class="img" id="i4">
+                    <img src="https://thetibbarguy.com/cdn/shop/files/The_Nordic_Weight_Bench_817d2e67-15d1-406b-b0ad-147931612872.jpg?v=1682273004&width=800"
+                        alt="">
+                </div>
+                <div class="img" id="i5">
+                    <img src="https://thetibbarguy.com/cdn/shop/files/TheTibMachine1.jpg?v=1687617978&width=800" alt="">
+                </div>
+                <div class="img" id="i6">
+                    <img src="https://thetibbarguy.com/cdn/shop/files/The_Torque_Bar.jpg?v=1682273416&width=800" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="customers">
+            <h1>HEAR FROM OUR CUSTOMERS</h1>
+            <div id="review">
+                <div class="swiper1 mySwiper1">
+                    <div class="swiper-wrapper">
+                        <% if (reviews.length === 0){ %>
+                          <p>No reviews yet.</p>  
+                        <% }else{ %>
+                            <% reviews.forEach(function(review){ %>
+                                <div class="swiper-slide">
+                                        <div class="starss">
+                                            <% for (let i = 1; i <= 5; i++) { %>
+                                                <% if (i <= review.stars) { %>
+                                                    <i class="ri-star-fill"></i>
+                                                <!-- <span class="star">&#9733;</span> -->
+                                                <% } else { %>
+                                                    <i class="ri-star-line"></i>
+                                                <!-- <span class="star">&#9734;</span> -->
+                                                <% } %>
+                                            <% } %>
+                                          </div>
+                                    <div class="review_img">
+                                        <img src="../images/uploads/reviewimages/<%= review.productimg %>" alt="">
+                                    </div>
+                                    <div class="review_text">
+                                        <h5><%= review.firstname %><%= review.lastname %></h5>
+                                        <p><%= review.comment %></p>
+                                    </div>
+                                </div>
+                            <% }) %>  
+                        <% } %>
+                
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="service">
+            <div id="faq">
+                <div class="lfaq">
+                    <div class="ftext">
+                        <h1>FAQ's</h1>
+                        <small>The Tib Bar Guy Frequently Asked Questions. For product specific FAQ's please visit the
+                            respective product!</small>
+                        <small>Our customer support is available Monday through Saturday: 9:00am-5:00pm to answer all of
+                            your questions.</small>
+                    </div>
+                </div>
+                <div class="lfaq">
+                    <div class="rows">
+                        
+                        <div class="row">
+                            <div class="fix_top">
+                                <h6>How long to get my order?</h6>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                            <div class="h3s">
+                                <h3>All products, excluding pre-order items, ship the next day, except for orders received on Saturday after 12pm EST or otherwise stated on the product listing. Orders received on Saturday after 12pm EST and Sunday will be processed on the next business day.</h3>
+                                <h3>Shipping for the contiguous United States takes between 2-5 business days and is shipped through USPS®, UPS Ground®, or FedEx®.</h3>
+                                <h3>Delivery details will be provided via email, which is sent after your order has been processed.</h3>
+                                <h3>Use The Tib Bar Guy Shipping Center to track your order!</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="fix_top">
+                                <h6>All things shipping</h6>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                             <div class="h3s">
+                                <h3>Yes, we ship all over the india.</h3>
+                                <h3>Shipping costs will apply and will be added at checkout. The delivery time for international shipping depends on where you are located.</h3>
+                                <h3>Worldwide orders are shipped through USPS®, UPS®, Fedex®, or DHL® which takes 1-10 business days to arrive depending on your location.</h3>
+                                <h3>Delivery details will be provided via email, which is sent after your order has been processed.</h3>
+                                <h3>Please keep in mind there may be additional customs, import, or postage fees which are not covered in the order.</h3>
+                                <h3>Please check with any applicable customs agency or shipping service such as UPS,USPS, or FedEx to confirm any additional fees.</h3>
+                                <h3>If you have any questions or need additional help please message us via our support center.</h3>
+                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="fix_top">
+                                <h6>Tib Bar Guy 90 Day Returns</h6>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                              <div class="h3s">
+                                <h3>Please use our support center to initiate a return during the 90 day return period. Proof of purchase is required for returns. Please inspect your order upon arrival and contact us immediately if the item is defective or damaged or if you received the wrong item. Items must be in the same condition that you received them, unworn or unused, and in their original packaging.</h3>
+                                <h3>Unfortunately, we cannot accept returns on scratch & dent sales or gift cards. The return postage is deducted from the final refund amount unless provided by the customer.</h3>
+                                <h3>Our refunds are processed to the original payment method and take 2-5 days on average. Please contact us if you have any additional questions!</h3>
+    
+                              </div>
+                        </div>
+                        <div class="row">
+                           <div class="fix_top">
+                            <h6>Additional Questions?</h6>
+                            <i class="ri-arrow-down-s-line"></i>
+                           </div>
+                            <div class="h3s">
+                                <h3>You can contact us through our contact page! We will be happy to assist you.</h3>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <% include ./partials/footer.ejs %>
+    <% include ./partials/loco.ejs %>
+
+        <script src="../javascripts/swipers.js"></script>
+        <script src="../javascripts/home.js"></script>
+        <script src="../javascripts/search.js"></script>
+        <% if(user){ %>
+            <script src="../javascripts/listner.js"></script>
+        <% } %>
+        <script src="../javascripts/nav.js"></script>
+</body>
+</html>

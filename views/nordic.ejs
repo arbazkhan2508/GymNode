@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/Allproduct.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/cartss.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+  </head>
+  <body>
+    <% include ./partials/nav.ejs %>
+    <% include ./partials/search.ejs %>
+    <% if(user){ %>
+        <% include ./partials/cart.ejs %>
+    <% } %>
+    <div id="main">
+          <h1>NORDICS</h1>
+          <div id="products_wrapper">
+            <div id="products">
+                <% products.forEach(function(product){ %>
+                        <div onclick="window.location.href='/single/<%= product._id %>'" id="product">
+                            <div class="img">
+                                <img src="../images/uploads/productimages/<%= product.pic[4] %>"
+                                alt="">
+                                <div class="overlay">
+                                    <img src="../images/uploads/productimages/<%= product.pic[0] %>"
+                                        alt="">
+                                    <div class="add">
+                                        <i class="ri-add-fill"></i>
+                                        <small>Quick add</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <h4><%= product.productName %></h4>
+                                <!-- <h4><%= product.productName %></h4> -->
+                                <div class="stars">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <h6>Rs.<%= product.Price %>.00</h6>
+                            </div>
+                        </div>
+                <% }) %>
+            </div>
+          </div>
+          
+         <% include ./partials/footer.ejs %>
+    </div>
+    <% include ./partials/loco.ejs %>
+
+    <script src="../javascripts/nav.js"></script>
+    <script src="../javascripts/search.js"></script>
+    <script src="../javascripts/listner.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>

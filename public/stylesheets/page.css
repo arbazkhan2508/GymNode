@@ -1,0 +1,77 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+  #main {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .page {
+    /* height: 100vh; */
+    padding-top: 22vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page  #image {
+    position: relative;
+    height: 75vh;
+    width: 96vh;
+    background-color: red;
+  }
+  .page  .img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .page  #i1 {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0%, 0 0%);
+  }
+  .page  .img {
+    /* height: 70vh; */
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  .page  .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .page  .text{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .page .t{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    padding-left: 7vmax;
+  }
+
+  .page .t h1{
+    font-family: roobert;
+    font-size: 3vmax;
+    font-weight: 700;
+    margin-bottom: 2vmax;
+  }
+  .page .t p{
+    font-family: roobert;
+    font-size: 1.3vmax;
+    font-weight: 500;
+    width: 90%;
+  }

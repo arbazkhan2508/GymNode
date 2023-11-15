@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>User Review Form</title>
+  <link rel="stylesheet" href="../stylesheets/review.css">
+</head>
+
+<body>
+
+  <div id="main">
+    <form action="/review" method="post" enctype="multipart/form-data">
+
+      <div class="about">
+        <h5>About you</h5>
+           <div class="name">
+             <div class="div">
+              <h6>First name*</h6>
+              <input placeholder="First name" type="text" id="user" name="firstname" required>
+             </div> 
+             <div class="div">
+               <h6>Last name*</h6>
+               <input placeholder="Last name" type="text" id="user" name="lastname" required> 
+             </div>
+           </div> 
+          <div class="div">
+            <h6>Email*</h6>
+            <input placeholder="Email" type="email" id="user" name="email" required> 
+          </div>
+          <div class="div">
+            <h6>Product name*</h6>
+            <input placeholder="Product name" type="text" id="user" name="productname" required> 
+          </div>
+      </div>
+      <div class="photo">
+        
+        <h5 style="margin-bottom: 1vmax;">Add Product Photo!</h5>
+          <input type="file" class="form-control" id="formFile" accept="image/*" name="reviewphoto">
+      </div>
+
+     <div class="textarea">
+        <h5 style="margin-bottom: 1vmax;">Tell us more!</h5>
+       <textarea  placeholder="Share your experience" id="comment" name="comment" rows="8" cols="50" required></textarea>
+     </div>
+
+     <div class="rating">
+      <h5>How would you rate this item?</h5>
+     <div class="stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+     </div>
+      <input type="hidden" id="stars" name="stars" value="0" required>
+    </div>
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="client.js"></script>
+  <script src="../javascripts/review1.js"></script>
+</body>
+
+</html>

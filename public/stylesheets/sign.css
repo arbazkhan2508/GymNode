@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+  }
+  
+  html,
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+  
+
+  #main {
+    width: 100vw;
+    background-color: #f0f0f0;
+  }
+
+  
+  
+ 
+  #left-panel {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  
+  
+  #nav img {
+    height: 15vh;
+  }
+ 
+  form{width: 30vw !important;}
+
+  #sign-in-page {
+    height: fit-content;
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 1vmax;
+    z-index: 9;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    background-color: #e5e5e5;
+  }
+  
+  #sign-in-page form {
+    position: relative;
+    width: 22.4vw;
+    /* background-color: blue; */
+  }
+  
+  #sign-in-page p {
+    font-size: 1.1vw;
+    margin-bottom: 0.5vh;
+    font-weight: 500;
+  }
+  
+  #sign-in-page h1 {
+    font-size: 2.5vw;
+    font-weight: 650;
+    color: #000;
+  }
+  
+  #sign-in-page a {
+    text-decoration: none;
+    color: #111;
+    font-size: 1.1vw;
+    font-weight: 600;
+    margin-top: 2.6vh;
+  }
+  #sign-in-page a:hover{
+    text-decoration: underline;
+  }
+  
+  #create_ac:hover {
+    text-decoration: underline;
+  }
+  
+  form input {
+    /* padding: 1vh 1vw; */
+    padding-left: .2vh;
+    width: 100%;
+    background-color: white;
+    background-color: transparent;
+    border: none;
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 10px;
+    margin-top: 1vmax;
+    padding: 1vmax 0vmax;
+    padding-left: 1vmax;
+    
+  }
+  
+  form input:focus {
+    outline: none;
+  }
+  
+  #land-form button {
+    width: 100%;
+    padding: 1.6vh 0;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    /* background: linear-gradient(to right, rgb(104, 41, 198) -15%, rgb(54, 121, 228), rgb(83, 141, 234)); */
+    font-weight: 600;
+    background-color: #d84424 !important;
+    cursor: pointer;
+    font-size: 1.2vw;
+    margin-top: 4vh;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  }
+  
+  #land-form button:active {
+    transform: scale(0.95);
+  }
+  
+  form h5 {
+    text-align: left;
+    margin-top: 1.8vh;
+    font-weight: 600;
+    font-size: 1vw;
+    color: #767676;
+    color: #fff;
+  }
+  
+  #gitgoog {
+    margin-top: -1.2vh;
+    display: flex;
+    padding: 1vh 2vw;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #google_link {
+    background: linear-gradient(rgb(255, 85, 67), rgb(214, 16, 16));
+    padding: 1.4vh 1.3vw;
+    color: white !important;
+    border-radius: 5px;
+    font-size: 1.1vw !important;
+    /* margin-right: 2vw; */
+    display: flex;
+    align-items: center;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+    background-color: olive;
+  }
+  
+  #google_link i {
+    font-weight: 100;
+    font-size: 1.3vw;
+    margin-right: 1.5vw;
+  }
+  
+  #google_link:active {
+    transform: scale(0.95);
+  }
+  
+ 
+  #main2 {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: 100;
+    overflow: hidden;
+    display: none;
+  }
+  
+  
+  
+  
+  
+  @media (max-width:767px){
+    #right-panel {
+      display: none;
+    }
+    
+    #left-panel {
+      width: 100%;
+    }
+    #nav i {
+      font-size: 9vw;
+    }
+    #nav{
+      padding: 0 20px !important;
+      padding-top: 20px !important;
+    }
+    #nav h6{
+      font-size: 6vw;
+    }
+    #sign-in-page form{
+      width: 80vw;
+    }
+    #sign-in-page h1{
+      font-size: 7vw;
+    }
+    form h5 {
+      font-size: 5vw;
+    }
+    form input{
+      font-size:6vw;
+    }
+    #land-form button{
+      font-size: 5vw;
+      letter-spacing: 2px;
+    }
+    #sign-in-page a{
+      font-size: 5vw;
+    }
+    #google_link{
+      font-size: 4vw !important;
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+    #google_link i{
+      font-size: 6vw;
+    }
+    .mt-3{
+      margin-top: 1vmax;
+    }
+    #main{
+      overflow: hidden !important;
+    }
+    body{
+      overflow: hidden;
+    }
+  }
+
+  .login_btm{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -5vh;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

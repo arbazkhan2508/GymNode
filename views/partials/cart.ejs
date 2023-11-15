@@ -1,0 +1,63 @@
+<div class="cart_wrappers">
+    <div id="carts">
+        <div id="cart_top">
+             <h3>Cart <span><%= user.carts.length %></span></h3>
+             <i id="closecart" class="ri-close-fill"></i>
+        </div>
+        <div class="carttt">
+            <div class="cart_toppp">
+                <% var sum = 0 %>
+                <% if(user.carts.length>0){ %>
+                    <% user.carts.forEach(function(cart){ %>
+                        <div class="cart">
+                            <div class="lcart">
+                                <div class="cimg">
+                                    <img src="../images/uploads/productimages/<%= cart.productId.pic[3] %>" alt="">
+                               </div>
+                               <div class="ctxt">
+                                   <h6><%= cart.productId.productName %></h6>
+                                   <small>RS.<%= cart.productId.Price %>.00</small>
+                                   <% sum+=  cart.productId.Price %>
+                               </div>
+                            </div>
+                            <div class="rcart">
+                                  <div class="quant">
+                                       <h6><%= cart.quantity %></h6>
+                                  </div>
+                                  <p onclick="window.location.href='/remove/cart/<%= cart._id %>'" id="p">Remove</p>
+                            </div>
+                              
+                         </div>
+                         
+                   <% }) %>
+                <% }else{ %>
+
+                <% } %>
+              
+            </div>
+        </div>
+        <div class="pric_e">
+            <div class="amt">
+                <div class="aml">
+                    <h4>Total</h4>
+                    <p>Taxes and &nbsp;
+                    <span>shipping</span>&nbsp; calculated at checkout</p>
+                </div>
+                <h1>Rs.&nbsp;<%= sum %>.00</h1>
+            </div>
+            <div class="cartbtns">
+                   <div onclick="window.location.href='/cart'" class="vc">
+                       View cart
+                   </div>
+                   <div onclick="window.location.href='/checkout'" class="vc">
+                       <svg role="presentation" fill="none" focusable="false" stroke-width="2" width="18" height="18" class="icon icon-picto-lock" viewBox="0 0 24 24">
+                           <path d="M3.236 18.182a5.071 5.071 0 0 0 4.831 4.465 114.098 114.098 0 0 0 7.865-.001 5.07 5.07 0 0 0 4.831-4.464 23.03 23.03 0 0 0 .165-2.611c0-.881-.067-1.752-.165-2.61a5.07 5.07 0 0 0-4.83-4.465c-1.311-.046-2.622-.07-3.933-.069a109.9 109.9 0 0 0-3.933.069 5.07 5.07 0 0 0-4.83 4.466 23.158 23.158 0 0 0-.165 2.609c0 .883.067 1.754.164 2.61Z" fill="currentColor" fill-opacity=".12" stroke="currentColor"></path>
+                           <path d="M17 8.43V6.285A5 5 0 0 0 7 6.286V8.43" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M12 17.714a2.143 2.143 0 1 0 0-4.286 2.143 2.143 0 0 0 0 4.286Z" stroke="currentColor"></path>
+                         </svg>
+                       Checkout
+                   </div>
+            </div>
+        </div>
+      </div>
+   </div>

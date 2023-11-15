@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+width: 100%;
+height: 100%;
+overflow: hidden;
+background-color: #f5f5f5;
+background-color: #f0f0f0;
+padding-top: 12vh;
+cursor: pointer;
+}
+
+#cnav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10vmax;
+    padding-bottom: 2vh;
+    background-color: #fff;
+    padding-top: 3vh;
+    position: fixed;
+    top: 0;
+    z-index: 99999999;
+    border-bottom: 1px solid #111;
+}
+#cnav img{
+    height: 8vh;
+}
+#cnav a{
+    color: #000;
+}
+#main .cardd{
+    width: 100%;
+
+}
+.climg{
+    width: 8vh;height: 8vh;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 1px #222;
+}
+.climg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.cproduct .cl{
+    display: flex;align-items: center;
+}
+.cardd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+.cproduct{
+    background-color: teal;padding: 0 1.2vmax;
+    border-radius: .2vmax;
+    background-color: #fff;
+    box-shadow: 0 0 2px #a19d9d;
+    padding-top: .7vmax;
+    padding-bottom: .7vmax;
+    
+}
+.contain{
+    display: flex;
+    width: 85%;
+    height: 100%;
+    /* background-color: #fff !important; */
+}
+.usr{
+    display: flex;
+    flex-direction: column;
+        width: 60%;
+    height: 100%;
+    border-right: 1px solid #111;
+    /* background-color: #fff; */
+    padding-bottom: 10vh;
+    padding-top: 5vh;
+    height: 90vh;
+    overflow-y: auto
+}
+.usr::-webkit-scrollbar{
+    display: none;
+}
+.check{
+    padding: 1vmax 5vmax;
+    width: 40%;
+      padding-left: 3vmax;
+      padding-right: 6vmax;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+background-color: #f0f0f0;
+height: 90vh;
+}
+.check .cproduct{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 0 1vmax; */
+    margin-top: 1vmax;
+}
+.cl h6{
+    font-family: roobert;
+    font-weight: 600;
+    font-size: 1.1vmax;
+    margin-left: 10px;
+}
+.climg p{
+    color: red;
+    top: -16%;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    padding: .1vmax .5vmax;
+    font-size: .8vmax;
+    font-weight: 600;
+    position: absolute;
+    z-index: 999;
+    right: -4%;
+    
+
+}
+.cproduct h5{
+    color: #333;
+    font-family: roobert;
+    color: #8e8e8e;
+    font-size: 1.2vmax;
+
+}
+
+.rr{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .5vmax;
+}
+.rr h6{
+    font-family: roobert;
+    font-size: 1vmax;
+    color: #7a7a7a;
+}
+.rr h1{
+    font-family: roobert;
+    font-size: 1.1vmax;
+    font-weight: 600;
+    color: #111;
+} 
+.rr h1 span{
+    font-family: roobert;
+    font-size: 1vmax;
+    font-weight: 600;
+    color: #111;
+    margin-right: 10px;
+    color: #7a7a7a;
+
+}
+.rr{
+    margin-bottom: .5vmax;
+}
+
+.em h6{
+    color: #969696;
+    font-size: 1vmax;
+    font-family: roobert;
+    letter-spacing: 1px;
+}
+.em h5{
+    color: #111;
+    font-size: 1vmax;
+    font-family: roobert;
+    letter-spacing: 1px;
+    margin-top: -5px;
+}
+.usr h4{
+    color: #111;
+    font-size: 1.5vmax;
+    font-weight:600;
+    font-family: roobert;
+    letter-spacing: 1px;
+    margin-bottom: 1vmax;
+    margin-top: 1vmax;
+}
+.em{
+    width: 70%;
+    border: 1px solid #111;
+    padding-left: 1vmax;
+    border-radius: .5vmax;
+    padding-top: .5vmax;
+    margin-bottom: 1vmax;
+}
+.name{
+    display: flex;
+    align-items: center;
+    gap: 1vmax;
+}
+.name .em{
+    width: 34%;
+}
+.pay{
+    background-color: #000;
+    color: #fff;
+    font-family: roobert;
+    font-size: 1.2vmax;
+    font-size: 1.2vmax;
+    width: 70%;
+    padding: .7vmax 0;
+    border-radius: .3vmax;
+    display: flex;
+    font-weight: 550;
+    letter-spacing: 1px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vmax;
+}

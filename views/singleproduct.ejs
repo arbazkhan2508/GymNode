@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/cartss.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+    <link rel="stylesheet" href="../stylesheets/singleprodecu.css">
+</head>
+
+<body>
+    <% include ./partials/nav.ejs %>
+    <% include ./partials/search.ejs %>
+        <% if(user){ %>
+            <% include ./partials/cart.ejs %>
+        <% } %>
+
+
+                    <div id="main">
+                        <div id="pg1">
+                            <div id="pg1img">
+                                <div class="single_img">
+                                    <img src="../images/uploads/productimages/<%= product.pic[4] %>" alt="">
+                                </div>
+                            </div>
+                            <div id="pg1text">
+                                <div class="pricing">
+                                    <h1>
+                                        <%= product.productName %>
+                                    </h1>
+                                    <div class="price">
+                                        <h6>Rs. <%= product.Price %>.00</h6>
+                                        <div class="small">
+                                            <small>Rs. 10,800.00</small>
+                                            <div class="sline"></div>
+                                        </div>
+                                        <p>Save 39%</p>
+                                    </div>
+                                    <div class="icons">
+                                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                            class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                            class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="counters">
+                                        <h4>Quantity:</h4>
+                                        <div class="cntr">
+                                            <i onclick="decrementCount()" class="ri-subtract-line"></i>
+                                            <small id="countSpan">
+                                                <%= count %>
+                                            </small>
+                                            <i onclick="incrementCount()" class="ri-add-line"></i>
+                                        </div>
+                                    </div>
+                                    <div onclick="sendToCart()" class="cart">
+                                        Add to cart
+                                    </div>
+                                    <h3>In Stock with Next Day Shipping!</h3>
+                                </div>
+                                <h6 id="et">Elevate Your Training Today👇</h6>
+                                <div class="suggest">
+                                    <% randomSubset.forEach(function(sug){ %>
+                                        <div class="sugg">
+                                            <div class="sugl">
+                                                <div class="sugimg">
+                                                    <img src="../images/uploads/productimages/<%= sug.pic[1] %>" alt="">
+                                                </div>
+                                                <div class="sugtxt">
+                                                    <h6>
+                                                        <%= sug.productName %>
+                                                    </h6>
+                                                    <p>Rs. <%= sug.Price %>.00</p>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="add">
+                                                <i class="ri-add-fill"></i>
+                                                Add
+                                            </div>
+                                        </div>
+                                        <% }) %>
+
+                                </div>
+                                <div class="des">
+                                    <small id="repl">
+                                        <%= product.Des %>
+                                    </small>
+                                    <p
+                                        style="font-weight: 600;font-size: 1.3vmax;font-family: roobert;margin-top: 2vmax;">
+                                        <%= product.bolt %>
+                                    </p>
+                                </div>
+                                <div class="optrows">
+                                    <div id="roww1" class="orows">
+                                        <div class="ortop">
+                                            <h6>Gear Space</h6>
+                                            <i class="ri-arrow-down-s-line"></i>
+                                        </div>
+                                        <div class="p">
+                                            <div class="dot"></div>
+                                            <p>Weight&nbsp &nbsp: <%= product.weight %>lbs</p>
+                                        </div>
+                                        <div class="p">
+                                            <div class="dot"></div>
+                                            <p>Height&nbsp &nbsp: <%= product.height %><sup>"</sup></p>
+
+                                        </div>
+                                        <div class="p">
+
+                                            <div class="dot"></div>
+                                            <p>Length &nbsp &nbsp:Premium Weight Clamp</p>
+                                        </div>
+                                        <div class="p">
+                                            <div class="dot"></div>
+                                            <p>Width&nbsp &nbsp :Heavy-Duty Steel Construction</p>
+                                        </div>
+                                        <div class="p">
+                                            <div class="dot"></div>
+                                            <p>Width&nbsp &nbsp :Long Lasting Premium Foam></p>
+                                        </div>
+                                        <div class="p">
+                                            <div class="dot"></div>
+                                            <p>Width&nbsp &nbsp :Removable Loading Bar</p>
+                                        </div>
+
+                                    </div>
+                                    <div id="roww2" style="border-top: none;" class="orows">
+                                        <div class="ortop">
+                                            <h6>Shipping</h6>
+                                            <i class="ri-arrow-down-s-line"></i>
+                                        </div>
+                                        <p>All products, excluding pre-order items, ship the next day, except for orders
+                                            received on
+                                            Saturday after 12pm EST or otherwise stated on the product listing. Orders
+                                            received on
+                                            Saturday after 12pm EST and Sunday will be processed on the next business
+                                            day.</p>
+                                        <p style="margin-top: 1vmax;">Shipping for the contiguous United States takes
+                                            between 2-5
+                                            business days and is shipped through USPS®, UPS Ground®, or FedEx®.</p>
+                                        <p style="margin-top: 1vmax;">Delivery details will be provided via email, which
+                                            is sent
+                                            after your order has been processed.</p>
+                                        <p style="margin-top: 1vmax;">Use The Tib Bar Guy Shipping Center to track your
+                                            order!</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="imagesss">
+                            <div class="rimgsss">
+                                <img src="../images/uploads/productimages/<%= product.pic[1] %>" alt="">
+                            </div>
+                            <div class="rimgsss">
+                                <div class="r11m">
+                                    <img src="../images/uploads/productimages/<%= product.pic[2] %>" alt="">
+                                </div>
+                                <div class="r11m">
+                                    <img src="../images/uploads/productimages/<%= product.pic[4] %>" alt="">
+
+                                </div>
+                            </div>
+                            <div class="rimgsss">
+                                <img src="../images/uploads/productimages/<%= product.pic[3] %>" alt="">
+                            </div>
+                        </div>
+                        <h1>FREQUENTLY BOUGHT <br> TOGETHER</h1>
+                        <div id="products_wrapper">
+                            <div id="products">
+                                <% randomSubset.forEach(function(prd){ %>
+                                    <div onclick="window.location.href='/single/<%= product._id %>'" id="product">
+                                        <div class="img">
+                                            <img src="../images/uploads/productimages/<%= prd.pic[0] %>" alt="">
+                                            <div class="overlay">
+                                                <img src="../images/uploads/productimages/<%= prd.pic[1] %>" alt="">
+                                                <div class="add">
+                                                    <i class="ri-add-fill"></i>
+                                                    <small>Quick add</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text">
+                                            <h4>TiB BAR PRO</h4>
+                                            <!-- <h4><%= product.productName %></h4> -->
+                                            <div class="stars">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </div>
+                                            <h6>Rs.5332.00</h6>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+
+
+
+                            </div>
+                        </div>
+                        <div id="customers">
+                            <h1>HEAR FROM OUR CUSTOMERS</h1>
+                            <h5>THE SOLO TIB BAR REVIEWS</h5>
+                            <div class="headr">
+                                <div style="display: flex;align-items: center;" class="hl">
+                                    <div class="icons">
+                                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                            class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                            class="ri-star-fill"></i>
+                                    </div>
+                                     <h6>reviewcount</h6>
+                                </div>
+                                <div class="hr">
+                                    <h6>Write a review</h6>
+                                </div>
+                            </div>
+                            <div class="reviewssss">
+                                    <div class="review_wrapper">
+                                        <% product.reviews.forEach(function(rvw){ %>
+                                            <div class="review_card">
+                                                <div class="retxt">
+                                                    <h3><%= rvw.firstname %><%= rvw.lastname %></h3>
+                                                    <small><%= rvw.createdAt %></small>
+                                                    <div class="starss">
+                                                        <% for (let i = 1; i <= 5; i++) { %>
+                                                            <% if (i <= rvw.stars) { %>
+                                                                <i class="ri-star-fill"></i>
+                                                              <!-- <span class="star">&#9733;</span> -->
+                                                            <% } else { %>
+                                                                <i class="ri-star-line"></i>
+                                                              <!-- <span class="star">&#9734;</span> -->
+                                                            <% } %>
+                                                          <% } %>
+                                                      
+                                                    </div>
+                                                    <p>I<%= rvw.comment %></5>.</p>
+                                                </div>
+        
+                                                <div class="reimg">
+                                                    <img src="https://images.loox.io/uploads/2023/6/24/cJZO5gjrE.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% include ./partials/footer.ejs %>
+                    <% include ./partials/loco.ejs %>
+                       
+                        <script src="../javascripts/listner.js"></script>
+                        <script src="../javascripts/nav.js"></script>
+                        <script src="../javascripts/single.js"></script>
+                        <script src="../javascripts/search.js"></script>
+                        <script>
+                            function splitContentIntoChunks() {
+                                const smallTag = document.getElementById("repl");
+                                const content = smallTag.textContent;
+                                const words = content.split(/\s+/);
+
+                                let chunks = [];
+                                while (words.length > 0) {
+                                    const chunk = words.splice(0, 100).join(" ");
+                                    chunks.push(chunk);
+                                }
+
+                                //   const modifiedContent = chunks.join("<br>");
+                                const modifiedContent = chunks.map(chunk => `<div class="chunk">${chunk}</div>`).join("<br>");
+
+                                smallTag.innerHTML = modifiedContent;
+                            }
+
+                            // Call the function when the page loads
+                            splitContentIntoChunks();
+
+                            // let count = <%= count %>;
+
+                            function incrementCount() {
+                                let c = document.querySelector("#countSpan").textContent;
+                                c++;
+                                //   c.innerHTML = c;
+                                document.getElementById('countSpan').textContent = c;
+                                console.log(c, "uts c");
+
+                            }
+
+                            function decrementCount() {
+
+                                let c = document.querySelector("#countSpan").textContent;
+                                if (c > 0) {
+                                    c--;
+                                    document.getElementById('countSpan').textContent = c;
+
+                                }
+                                //   c.innerHTML = c;
+
+                            }
+
+                            function sendToCart() {
+                                // Get the variableData from the EJS template
+                                const variableData = document.getElementById('countSpan').textContent;
+
+                                // Make an AJAX request to the server (using Fetch API)
+                                fetch('/cart/<%= product._id %>', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({ data: variableData }),
+                                })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        console.log('Server response:', data);
+                                        // You can handle the server response here as needed
+                                        // For example, display a message indicating success, etc.
+                                    })
+                                    .catch(error => {
+                                        console.error('Error sending data:', error);
+                                    });
+                            }
+
+
+                        </script>
+</body>
+
+</html>
